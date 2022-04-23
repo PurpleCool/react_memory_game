@@ -1,5 +1,6 @@
 import { useState } from 'react/cjs/react.development';
-import './App.css'
+import './App.css';
+import Card from './components/Card/Card';
 // import * as helmet_1 from '../public/img/helmet-1.png';
 // import * as potion_1 from '../public/img/potion-1.png';
 // import * as ring_1   from '../public/img/ring-1.png';
@@ -10,11 +11,11 @@ import './App.css'
 const cardImages = [
   { src: 'img/helmet-1.png' },
   { src: 'img/potion-1.png' },
-  { src: 'img/ring-1.png'   },
+  { src: 'img/ring-1.png' },
   { src: 'img/scroll-1.png' },
   { src: 'img/shield-1.png' },
-  { src: 'img/sword-1.png'  },
-]
+  { src: 'img/sword-1.png' },
+];
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -28,7 +29,7 @@ function App() {
 
     setCards(() => shuffled);
     setTurns(0);
-  }
+  };
 
   console.log('cards', cards);
   console.log('turns', turns);
@@ -40,16 +41,11 @@ function App() {
 
       <div className="card-grid">
         {cards.map(card => (
-          <div key={card.id} className='card'>
-            <div>
-              <img src={card.src} alt="card front" className='front'/>
-              <img src='/img/cover.png' alt="card back" className='back'/>
-            </div>
-          </div>
+          <Card imgSrc={card.src} key={card.id}/>
         ))}
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
