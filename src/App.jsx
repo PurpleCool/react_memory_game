@@ -37,10 +37,6 @@ function App() {
   };
 
   useEffect(() => {
-    compareChoices();
-  }, [choiceOne, choiceTwo]);
-
-  const compareChoices = () => {
     if (!choiceOne || !choiceTwo) {
       return;
     }
@@ -56,7 +52,7 @@ function App() {
     }
 
     setTimeout(resetTurn, 1000);
-  };
+  }, [choiceOne, choiceTwo]);
 
   const resetTurn = () => {
     setChoiceOne(null);
