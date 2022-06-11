@@ -2,6 +2,10 @@
 
 [**play memory game**](https://62a515d784ea190008802e7d--react-memory-game-a1f40d.netlify.app/)
 
+# This project was created while following a tutorial by The Net Ninja
+
+[Build a Memory Game with React](https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm)
+
 # Getting Started with Create Reac+t App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
