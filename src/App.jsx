@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react/cjs/react.development';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Card from './components/Card/Card';
 
