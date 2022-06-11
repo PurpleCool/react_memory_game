@@ -9,16 +9,13 @@ export default function Card({ card, handleChoice, flipped }) {
   return (
     <div className='card'>
       <div className={flipped ? 'card--flipped' : ''}>
-        {flipped ? (
-          <img src={card.src} alt='card front' className='front' />
-        ) : (
-          <img
-            src='/img/cover.png'
-            alt='card back'
-            className='back'
-            onClick={handleClick}
-          />
-        )}
+        <img src={card.src} alt='Card front' className='card-front' />
+        <img
+          src='/img/cover.png'
+          className='card-back'
+          alt='Card back'
+          onClick={handleClick}
+        />
       </div>
     </div>
   );

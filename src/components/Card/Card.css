@@ -9,23 +9,25 @@
   border-radius: 6px;
 }
 
-.card .front {
+/* front of the card - the picture*/
+.card .card-front {
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;
   position: absolute;
 }
 
-.card--flipped .front {
+.card .card--flipped .card-front {
   transform: rotateY(0deg);
   transition-delay: 0.2s;
 }
 
-.card .back {
+/* back of the card */
+.card .card-back {
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
 }
 
-.card--flipped .back {
-  transform: rotateY(0deg);
-  transition-delay: 0.2s;
+.card .card--flipped .card-back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
 }
