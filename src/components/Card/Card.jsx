@@ -1,8 +1,12 @@
 import React from 'react';
 import './Card.css';
 
-export default function Card({ card, handleChoice, flipped }) {
+export default function Card({ card, handleChoice, flipped, disabled }) {
   const handleClick = () => {
+    if (disabled) {
+      return;
+    }
+
     handleChoice(card);
   };
 
