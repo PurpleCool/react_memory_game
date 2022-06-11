@@ -1,4 +1,4 @@
-# Checout this project hosted by netlify
+# Checout this project hosted on netlify
 
 [**play memory game**](https://62a515d784ea190008802e7d--react-memory-game-a1f40d.netlify.app/)
 
