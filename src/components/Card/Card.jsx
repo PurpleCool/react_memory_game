@@ -1,14 +1,21 @@
 import React from 'react';
 import './Card.css';
 
-export default function Card(props) {
-  const { imgSrc } = props;
+export default function Card({ card, handleChoice, flipped }) {
+  const handleClick = () => {
+    handleChoice(card);
+  };
 
   return (
     <div className='card'>
-      <div>
-        <img src={imgSrc} alt='card front' className='front' />
-        <img src='/img/cover.png' alt='card back' className='back' />
+      <div className={flipped ? 'card--flipped' : ''}>
+        <img src={card.src} alt='Card front' className='card-front' />
+        <img
+          src='/img/cover.png'
+          className='card-back'
+          alt='Card back'
+          onClick={handleClick}
+        />
       </div>
     </div>
   );
