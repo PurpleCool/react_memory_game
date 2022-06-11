@@ -17,26 +17,26 @@ function App() {
 
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
-  
+
   const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+
     const shuffled = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
-      // .map((card, idx) => ({ ...card, id: idx }));
-      .map((card, idx) => ({ ...card, id: Math.random() }));
+      .map((card, idx) => ({ ...card, id: idx }));
 
     setCards(() => shuffled);
     setTurns(0);
   };
 
-  // handle a choice
   const handleChoice = card => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
   useEffect(() => {
-    setDisabled(true);
     compareChoices();
   }, [choiceOne, choiceTwo]);
 
@@ -44,6 +44,8 @@ function App() {
     if (!choiceOne || !choiceTwo) {
       return;
     }
+
+    setDisabled(true);
 
     if (choiceOne.src === choiceTwo.src) {
       setCards(prevCards =>
@@ -63,6 +65,10 @@ function App() {
     setDisabled(false);
   };
 
+  useEffect(() => {
+    shuffleCards();
+  }, []);
+
   return (
     <div className='App'>
       <h1>Magic Match</h1>
@@ -79,6 +85,7 @@ function App() {
           />
         ))}
       </div>
+      <p>Turns: {turns}</p>
     </div>
   );
 }
